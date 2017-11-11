@@ -23,7 +23,6 @@ const InputRange = ({ name, value, onDelete, onChange }) => {
                     step={0.01}
                     value={value}
                     onChange={(val) => {
-                        console.log(val, 'change');
                         onChange(val);
                     }}
                 />

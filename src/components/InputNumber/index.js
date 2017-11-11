@@ -12,8 +12,8 @@ function formatValue(value) {
 
 class InputNumber extends PureComponent {
     state = {
-        formattedValue: formatValue(this.props.value || 100),
-        rawValue: this.props.value || 100,
+        formattedValue: formatValue(this.props.value),
+        rawValue: this.props.value,
     };
 
     componentWillReceiveProps(props) {
