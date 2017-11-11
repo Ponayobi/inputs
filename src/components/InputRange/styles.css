@@ -1,0 +1,60 @@
+.input-range {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-range__name {
+
+}
+
+.input-range__bar {
+    margin-left: 10px;
+    margin-right: 10px;
+    flex: 1;
+    border: 1px solid #333;
+    height: 10px;
+}
+
+.input-range__input {
+    margin-right: 10px;
+}
+
+.input-range__button {
+    position: relative;
+    padding: 15px;
+    border-radius: 2px;
+    border: 1px solid #333;
+    transition: all .6s ease;
+}
+
+.input-range__button:active,
+.input-range__button:hover {
+    background-color: #333;
+    transition: all .3s ease;
+}
+
+.input-range__button:before,
+.input-range__button:after {
+    content: '';
+    background-color: #333;
+    height: 15px;
+    width: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.input-range__button:active:before,
+.input-range__button:active:after,
+.input-range__button:hover:before,
+.input-range__button:hover:after {
+    background-color: #fff;
+}
+
+.input-range__button:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.input-range__button:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

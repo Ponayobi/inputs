@@ -1,0 +1,45 @@
+.input-number {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 2px;
+}
+
+.input-number__controls {
+    padding: 0 12px;
+    line-height: 30px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .6s ease;
+}
+
+.input-number__controls:hover {
+    color: #fff;
+    background-color: #333;
+}
+
+.input-number:hover .input-number__controls,
+.input-number:focus .input-number__controls {
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+.input-number__input {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: none;
+    border-bottom: none;
+    transition: all .6s ease;
+    padding: 6px 12px;
+    width: 92px;
+    text-align: center;
+}
+
+.input-number__input:focus {
+    outline: none;
+}
+
+.input-number:hover .input-number__input,
+.input-number:focus .input-number__input {
+    border-color: #333;
+    transition: all .3s ease;
+}
