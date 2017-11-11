@@ -67,28 +67,30 @@ function* equalizePercents(items, percent, direction = 0) {
     );
 }
 
-function* recalculatePercentages({ payload: { id = 0 } }) {
+function* recalculatePercentages({ payload: { id } }) {
     const items = yield select(selectItems());
     const direction = yield select(selectDirection());
     const selectedItem = items.find((item) => item.get('id') === id);
+    const selectedPercent = selectedItem ? selectedItem.get('percent') : 0;
     const filteredItems = items.filter((item) => item.get('id') !== id);
 
     let totalPercent = 0;
     items.forEach((item) => {
         totalPercent += round(item.get('percent'));
     });
+    const percent = round(100 - selectedPercent);
 
     if (totalPercent) {
-        yield call(equalizePercents, filteredItems, round(100 - selectedItem.get('percent')), direction);
+        yield call(equalizePercents, filteredItems, percent, direction);
     } else {
-        yield call(equalizePercents, items, 100, direction);
+        yield call(equalizePercents, items, 100);
     }
 }
 
 export function* saga() {
     yield takeLatest(CREATE_NEW_ITEM, getNewItem);
-    yield takeLatest(DATA_FETCH_SUCCESS, recalculatePercentages);
+    yield takeLatest(DATA_FETCH_SUCCESS, recalculatePercentages, {payload: {id:0}});
     yield takeLatest(ITEM_ADD, recalculatePercentages);
     yield takeLatest(ITEM_CHANGE, recalculatePercentages);
-    yield takeLatest(ITEM_DELETE, recalculatePercentages, {payload: {id:0}});
+    yield takeLatest(ITEM_DELETE, recalculatePercentages);
 }

@@ -2,23 +2,23 @@
   "items": [
     {
       "name": "Item 1",
-      "percent": 80
+      "percent": 0
     },
     {
       "name": "Item 2",
-      "percent": -100
+      "percent": 0
     },
     {
       "name": "Item 3",
-      "percent": 120
+      "percent": 0
     },
     {
       "name": "Item 4",
-      "percent": 1
+      "percent": 0
     },
     {
       "name": "Item 5",
-      "percent": 30
+      "percent": 0
     },
     {
       "name": "Item 6",

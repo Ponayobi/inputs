@@ -4,3 +4,9 @@
 .item-list__controls {
     text-align: center;
 }
+
+.item-list__warning {
+    text-align: center;
+    color: grey;
+    margin-bottom: 30px;
+}

@@ -23,6 +23,7 @@ class App extends Component {
                         onChange={(val) => { onChange(item.get('id'), val); }}
                     />
                 ))}
+                {!items.size && <div className="item-list__warning">There is nothing to show</div>}
                 <div className="item-list__controls">
                     <Button onClick={onAdd}>Add more</Button>
                 </div>
