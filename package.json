@@ -2,7 +2,7 @@
   "name": "dvhb-test",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://ponayobi.github.io/inputs",
+  "homepage" : "http://ponayobi.github.io/inputs/",
   "dependencies": {
     "immutable": "^3.8.2",
     "numeral": "^2.0.6",
