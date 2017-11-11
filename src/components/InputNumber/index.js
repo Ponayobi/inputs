@@ -11,6 +11,7 @@ function formatValue(value) {
 }
 
 class InputNumber extends PureComponent {
+    isFocus = false;
     state = {
         formattedValue: formatValue(this.props.value),
         rawValue: this.props.value,
@@ -20,6 +21,8 @@ class InputNumber extends PureComponent {
         const { value } = props;
         this.setState({
             rawValue: value,
+        });
+        if (!this.isFocus) this.setState({
             formattedValue: formatValue(value),
         });
     }
@@ -79,7 +82,7 @@ class InputNumber extends PureComponent {
         if (keyCode === KEY_DOT || keyCode === KEY_COMMA) {
             e.preventDefault();
             this.setState((prevState) => {
-                let formattedValue = prevState.formattedValue;
+                let formattedValue = prevState.formattedValue.toString();
                 const hasDot = formattedValue.indexOf('.') > 0;
 
                 if (!hasDot) formattedValue += '.';
@@ -98,6 +101,7 @@ class InputNumber extends PureComponent {
     };
 
     handleFocus = () => {
+        this.isFocus = true;
         this.input.setSelectionRange(0, this.input.value.length);
     };
 
@@ -105,6 +109,7 @@ class InputNumber extends PureComponent {
         const { rawValue } = this.state;
         const formattedValue = formatValue(rawValue);
         this.setState({ formattedValue });
+        this.isFocus = false;
     };
 
     render() {
