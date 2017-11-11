@@ -2,8 +2,9 @@
   "name": "dvhb-test",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://ponayobi.github.io/inputs/",
+  "homepage": "http://ponayobi.github.io/inputs/",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "immutable": "^3.8.2",
     "numeral": "^2.0.6",
     "react": "^16.0.0",
@@ -17,6 +18,8 @@
     "sanitize.css": "^5.0.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
